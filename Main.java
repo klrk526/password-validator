@@ -5,12 +5,14 @@ class Main {
         Scanner sc = new Scanner(System.in);
         String password = sc.nextLine();
         int password_length = password.length();
+        
         boolean hasLong = false;
         boolean hasUpper = false;
         boolean hasLower = false;
         boolean hasNum = false;
         boolean hasSpecial = false;
         boolean hasSpace = false;
+
         if (password_length >= 8) { // проверка длины пароля
             hasLong = true;
         } 
@@ -47,7 +49,27 @@ class Main {
         if (hasLong == true && hasUpper == true && hasLower == true && hasNum == true && hasSpecial == true && hasSpace != true) {
             System.out.println("OK");
         } else {
-            System.out.println("FAIL");
+            System.out.print("FAIL" + " ");
+        if (hasLong != true) {
+            System.out.print("LEN" + " ");
+        } 
+        if (hasUpper != true) {
+            System.out.print("UPPER" + " ");
+        } 
+        if (hasLower != true) {
+            System.out.print("LOWER" + " ");
+        } 
+        if (hasNum != true) {
+            System.out.print("DIGIT" + " ");
+        } 
+        if (hasSpecial != true) {
+            System.out.print("SPECIAL" + " ");
+        } 
+        if (hasSpace == true) {
+            System.out.print("SPACE" + " ");
         }
+            
+        }
+        
     }
 }
